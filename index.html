@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#243b53">
+  <title>مدرسة الشهيد أشرف يحي أبو النصر | الشؤون الطلابية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="screen home-screen active" id="homeScreen" aria-labelledby="schoolName">
+      <div class="school-mark" aria-hidden="true">
+        <span class="mark-icon">✦</span>
+      </div>
+      <h1 id="schoolName">مدرسة الشهيد أشرف يحي أبو النصر</h1>
+      <div class="logo-frame">
+        <img src="logo.JPG" alt="شعار المدرسة" class="school-logo"
+             onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+        <div class="image-fallback" hidden>
+          <span class="fallback-symbol">⌂</span>
+          <span>شعار المدرسة</span>
+        </div>
+      </div>
+
+      <div class="home-divider"><span></span><i>✦</i><span></span></div>
+      <p class="department">الشؤون الطلابية – قرارات إدارية</p>
+      <div class="official-label"><span class="status-dot"></span> إخطار رسمي</div>
+
+      <button class="primary-button" id="showDecision" type="button">
+        <span>عرض القرار</span><span class="button-arrow" aria-hidden="true">←</span>
+      </button>
+      <p class="footer-note">بوابة الإخطارات الإدارية</p>
+    </section>
+
+    <section class="screen decision-screen" id="decisionScreen" aria-labelledby="decisionTitle" hidden>
+      <header class="decision-header">
+        <div class="header-emblem" aria-hidden="true">✦</div>
+        <div>
+          <p class="eyebrow">الشؤون الطلابية</p>
+          <h2 id="decisionTitle">قرار عاجل – للمراجعة</h2>
+        </div>
+        <span class="urgent-tag">عاجل</span>
+      </header>
+
+      <div class="document-card">
+        <div class="document-topline"></div>
+        <div class="document-content">
+          <div class="notice-heading">
+            <span class="heading-icon" aria-hidden="true">▤</span>
+            <h3>إخطار بفتح تحقيق إداري</h3>
+          </div>
+
+          <p class="intro-text">
+            بناءً على ما تم رصده من مخالفات سلوكية متكررة، تقرر فتح تحقيق مع الطالب:
+          </p>
+
+          <div class="student-details">
+            <h4>أحمد السيد صابر</h4>
+            <div class="detail-row"><span class="detail-label">الصف:</span><span>السادس الابتدائي</span></div>
+            <div class="detail-row"><span class="detail-label">الفصل:</span><span>6/1</span></div>
+          </div>
+
+          <figure class="student-photo-wrap">
+            <img src="Ah.JPG" alt="صورة الطالب أحمد السيد صابر" class="student-photo"
+                 onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+            <div class="image-fallback student-fallback" hidden>
+              <span class="fallback-symbol">♙</span>
+              <span>صورة الطالب</span>
+            </div>
+          </figure>
+
+          <p class="purpose-text">
+            وذلك لمراجعة السلوكيات المسجلة واتخاذ الإجراءات التربوية المناسبة.
+          </p>
+
+          <div class="actions-section">
+            <h4><span class="list-icon" aria-hidden="true">☷</span> الإجراء المقترح:</h4>
+            <ul>
+              <li>استدعاء ولي الأمر.</li>
+              <li>جلسة استماع للطالب.</li>
+              <li>مراجعة قرار استمرار الطالب بالمدرسة أو فصله نهائيًا في حالة إجماع اللجنة على ذلك.</li>
+            </ul>
+          </div>
+
+          <div class="document-stamp">الشؤون الطلابية</div>
+        </div>
+      </div>
+
+      <button class="acknowledge-button" id="acknowledge" type="button">
+        <span aria-hidden="true">✓</span> تم الاستلام
+      </button>
+      <p class="acknowledgement-note">بالضغط على «تم الاستلام» ستعود إلى الواجهة الرئيسية.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

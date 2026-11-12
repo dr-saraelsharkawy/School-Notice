@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #243b53;
+  --navy-dark: #192d42;
+  --gold: #b58b45;
+  --gold-light: #f5eddf;
+  --ink: #263445;
+  --muted: #718096;
+  --line: #e7ebef;
+  --paper: #ffffff;
+  --page: #f7f8fa;
+  --danger: #a33d3d;
+}
+
+* { box-sizing: border-box; }
+
+html { min-height: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font: inherit; }
+
+.app-shell {
+  width: min(100% - 28px, 680px);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 0;
+}
+
+.screen { width: 100%; }
+.screen[hidden] { display: none !important; }
+
+.home-screen {
+  max-width: 510px;
+  margin: auto;
+  background: var(--paper);
+  border: 1px solid #edf0f3;
+  border-radius: 24px;
+  padding: 38px 28px 26px;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(31, 48, 67, .07);
+  animation: appear .35s ease both;
+}
+
+.school-mark {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 12px;
+  border: 1px solid #e8dcc8;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  background: #fffdf9;
+}
+.mark-icon { font-size: 22px; }
+
+h1 {
+  margin: 0 auto 20px;
+  color: var(--navy-dark);
+  font-size: clamp(21px, 5vw, 27px);
+  line-height: 1.65;
+  font-weight: 800;
+}
+
+.logo-frame {
+  width: 132px;
+  height: 132px;
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid #e8e2d8;
+  border-radius: 20px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.school-logo { width: 100%; height: 100%; object-fit: contain; }
+
+.image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #8994a0;
+  background: #f6f7f8;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.fallback-symbol { font-size: 32px; color: #9aa6b2; }
+
+.home-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px auto 16px;
+  color: var(--gold);
+}
+.home-divider span { width: 62px; height: 1px; background: #e7dcc9; }
+.home-divider i { font-style: normal; font-size: 13px; }
+
+.department {
+  margin: 0 0 14px;
+  color: var(--navy);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.official-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid #eadfcf;
+  border-radius: 30px;
+  background: #fcf9f4;
+  color: #87662f;
+  font-size: 14px;
+  font-weight: 700;
+}
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+
+.primary-button, .acknowledge-button {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  border-radius: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.primary-button {
+  margin-top: 27px;
+  color: white;
+  background: var(--navy);
+  box-shadow: 0 8px 18px rgba(36, 59, 83, .16);
+}
+.primary-button:hover { background: var(--navy-dark); box-shadow: 0 10px 22px rgba(36, 59, 83, .2); }
+.primary-button:active, .acknowledge-button:active { transform: scale(.985); }
+.button-arrow { font-size: 21px; line-height: 1; }
+
+.footer-note {
+  margin: 20px 0 0;
+  color: #a0a9b2;
+  font-size: 11px;
+}
+
+.decision-screen {
+  max-width: 590px;
+  margin: auto;
+  animation: appear .35s ease both;
+}
+.decision-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 2px 17px;
+}
+.header-emblem {
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--gold-light);
+  color: var(--gold);
+  font-size: 22px;
+}
+.eyebrow { margin: 0 0 1px; color: var(--muted); font-size: 11px; font-weight: 600; }
+.decision-header h2 { margin: 0; color: var(--navy-dark); font-size: clamp(18px, 4.5vw, 22px); font-weight: 800; }
+.urgent-tag {
+  margin-right: auto;
+  white-space: nowrap;
+  padding: 4px 11px;
+  color: var(--danger);
+  background: #fbefef;
+  border: 1px solid #f2dede;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.document-card {
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid #e9edf0;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(31, 48, 67, .06);
+}
+.document-topline { height: 5px; background: linear-gradient(90deg, #d5bd93, var(--navy), #d5bd93); }
+.document-content { padding: 25px clamp(18px, 5vw, 34px) 24px; }
+
+.notice-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.heading-icon {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #eef2f6;
+  color: var(--navy);
+  font-size: 20px;
+}
+.notice-heading h3 { margin: 0; color: var(--navy); font-size: 19px; font-weight: 800; }
+.intro-text, .purpose-text { color: #4c5968; font-size: 14px; line-height: 2; }
+.intro-text { margin: 18px 0 12px; }
+
+.student-details {
+  padding: 14px 16px;
+  background: #f8f9fb;
+  border: 1px solid #edf0f3;
+  border-radius: 12px;
+}
+.student-details h4 { margin: 0 0 8px; color: var(--navy-dark); font-size: 19px; font-weight: 800; }
+.detail-row { display: flex; gap: 7px; margin-top: 4px; color: #536171; font-size: 14px; }
+.detail-label { color: #87919c; font-weight: 700; }
+
+.student-photo-wrap {
+  width: 106px;
+  height: 106px;
+  margin: 16px auto 12px;
+  padding: 4px;
+  border: 1px solid #e4e8ec;
+  border-radius: 15px;
+  background: white;
+  overflow: hidden;
+}
+.student-photo { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 11px; }
+.student-fallback { border-radius: 11px; }
+.purpose-text { margin: 10px 0 18px; }
+
+.actions-section {
+  padding: 16px 17px;
+  background: #fbfaf7;
+  border: 1px solid #eee7db;
+  border-radius: 12px;
+}
+.actions-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 9px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 800;
+}
+.list-icon { color: var(--gold); font-size: 19px; }
+.actions-section ul { margin: 0; padding: 0 20px 0 0; color: #4c5968; }
+.actions-section li { padding-right: 2px; margin: 7px 0; font-size: 14px; line-height: 1.9; }
+.actions-section li::marker { color: var(--gold); }
+
+.document-stamp {
+  width: fit-content;
+  margin: 20px 0 0 auto;
+  padding: 5px 12px;
+  border: 1px solid #e5e9ed;
+  border-radius: 7px;
+  color: #87919c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.acknowledge-button {
+  margin-top: 17px;
+  color: white;
+  background: #2f6658;
+  box-shadow: 0 8px 18px rgba(47, 102, 88, .13);
+}
+.acknowledge-button:hover { background: #265747; }
+.acknowledge-button span { font-size: 19px; }
+.acknowledgement-note { margin: 10px 0 0; text-align: center; color: #8b96a1; font-size: 11px; }
+
+button:focus-visible { outline: 3px solid #d8bd8c; outline-offset: 3px; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .app-shell { width: min(100% - 22px, 680px); padding: 18px 0; }
+  .home-screen { padding: 30px 19px 22px; border-radius: 19px; }
+  .logo-frame { width: 116px; height: 116px; }
+  .department { font-size: 15px; }
+  .decision-header { gap: 9px; }
+  .header-emblem { width: 38px; height: 38px; flex-basis: 38px; }
+  .urgent-tag { padding: 3px 8px; font-size: 11px; }
+  .document-content { padding: 20px 17px; }
+  .notice-heading h3 { font-size: 17px; }
+  .intro-text, .purpose-text { font-size: 13px; }
+  .student-details h4 { font-size: 18px; }
+  .actions-section { padding: 14px 13px; }
+  .actions-section li { font-size: 13px; }
+}
